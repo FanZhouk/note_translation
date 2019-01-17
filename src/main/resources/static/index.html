@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<textarea id="content" style="width: 45%" placeholder="请输入要翻译的注释" rows="20"></textarea>
+<input type="button" id="translate_btn" value="翻译"></input>
+<textarea id="result" style="width: 45%" placeholder="结果会显示在这里" rows="20"></textarea>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#translate_btn").click(function () {
+            var data = {
+                "strategy": "java",
+                "content": $("#content").val()
+            }
+            $.ajax({
+                url: "/translate",
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                data: JSON.stringify(data),
+                success: function (result) {
+                    var jArray = JSON.parse(result);
+                    $("#result").val(""); // 清空结果集
+                    for (var i = 0; i < jArray.length; i++) {
+                        $("#result").val($("#result").val() + "\r\n" + jArray[i]);
+                    }
+                }
+            })
+        })
+    });
+
+</script>
