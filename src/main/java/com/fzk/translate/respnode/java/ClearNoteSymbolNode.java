@@ -21,7 +21,7 @@ public class ClearNoteSymbolNode extends RespNode {
      * 去掉注释符号（单行/多行）
      */
     @Override
-    public List<String> process(ProcessContext context) {
+    public List<String> process(ProcessContext context) throws Exception {
         if (context.rawContent == null)
             return new ArrayList<>();
         String[] rows = context.rawContent.split("\n");

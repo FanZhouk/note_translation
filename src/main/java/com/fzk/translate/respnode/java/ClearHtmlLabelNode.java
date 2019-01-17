@@ -22,7 +22,7 @@ public class ClearHtmlLabelNode extends RespNode {
      * @return
      */
     @Override
-    public List<String> process(ProcessContext context) {
+    public List<String> process(ProcessContext context) throws Exception {
         List<String> result = new ArrayList<>(context.result.size());
         for (String row : context.result) {
             // 去除标签，非贪婪匹配

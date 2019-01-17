@@ -19,7 +19,7 @@ import java.util.List;
 public class TranslateController {
 
     @RequestMapping("")
-    public String test(@RequestBody ContentDto dto) {
+    public String translate(@RequestBody ContentDto dto) {
         try {
             // 获取策略bean
             PreprocessStrategy strategy = PreprocessStrategyFactory.strategyMap.get(dto.getStrategy());

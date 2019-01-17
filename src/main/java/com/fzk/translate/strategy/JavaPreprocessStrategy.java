@@ -17,7 +17,7 @@ public class JavaPreprocessStrategy implements PreprocessStrategy {
      * 翻译Java注释文本
      */
     @Override
-    public List<String> translate(String content) {
+    public List<String> translate(String content) throws Exception {
         // 构造责任链
         RespNode respChain = new HeaderNode();
         respChain.setNext(new ClearNoteSymbolNode()) // 去除注释符号节点

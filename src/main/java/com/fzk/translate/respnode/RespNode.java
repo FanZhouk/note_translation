@@ -1,5 +1,6 @@
 package com.fzk.translate.respnode;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 /**
@@ -12,7 +13,7 @@ public abstract class RespNode {
     /**
      * 当前责任链的处理逻辑
      */
-    public abstract List<String> process(ProcessContext context);
+    public abstract List<String> process(ProcessContext context) throws Exception;
 
     /**
      * 设置下一个责任链节点
@@ -24,7 +25,7 @@ public abstract class RespNode {
     /**
      * 调用下一个责任链
      */
-    public List<String> go(ProcessContext context) {
+    public List<String> go(ProcessContext context) throws Exception {
         if (next != null)
             return next.process(context);
         return context.result;

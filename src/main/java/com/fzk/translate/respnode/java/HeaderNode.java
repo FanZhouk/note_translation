@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class HeaderNode  extends RespNode {
     @Override
-    public List<String> process(ProcessContext context) {
+    public List<String> process(ProcessContext context) throws Exception {
         return go(context);
     }
 }

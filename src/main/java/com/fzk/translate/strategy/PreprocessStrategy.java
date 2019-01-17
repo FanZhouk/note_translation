@@ -9,5 +9,5 @@ public interface PreprocessStrategy {
     /**
      * 对传入的文本进行预处理
      */
-    public List<String> translate(String content);
+    public List<String> translate(String content) throws Exception;
 }

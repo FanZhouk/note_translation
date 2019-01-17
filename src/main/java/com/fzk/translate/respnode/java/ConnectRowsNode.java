@@ -15,7 +15,7 @@ public class ConnectRowsNode extends RespNode {
      * 多行拼接为整段
      */
     @Override
-    public List<String> process(ProcessContext context) {
+    public List<String> process(ProcessContext context) throws Exception {
         // 结果集，一个元素表示一个段落
         List<String> result = new ArrayList<>();
 
