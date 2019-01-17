@@ -15,7 +15,7 @@ public class ClearNoteSymbolNode extends RespNode {
     /**
      * 每行需去除的注释前缀正则
      */
-    private static String[] prefixes = {"//+", "/\\*+", "\\*+/*"};
+    private static String[] prefixes = {"//+\\s*", "/\\*+\\s*", "\\*+/*\\s*"};
 
     /**
      * 去掉注释符号（单行/多行）
